@@ -4,6 +4,10 @@ As far as G++ goes, you would compile this through the command line in a similar
 
 g++ <your-file>.cpp ezStr.a
 
+It comes prepackaged with a testLib.cpp file in the src directory. If you wish to try it out, follwing the format above, we'd type in our commandline:
+
+g++ testLib.cpp ezStr.a
+
 *NOTE* If there are any .dll errors, you might have to append <-lstdc++> in between <your-file>.cpp and ezStr.a
 
 When it comes to MSVC, you need to go within the project settings of your friendly Visual Studio solution:
