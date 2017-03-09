@@ -1,0 +1,11 @@
+I tested this using both G++ and MSVC.
+
+As far as G++ goes, you would compile this through the command line in a similar manner to most other statically linked libraries:
+
+g++ <your-file>.cpp ezStr.a
+
+*NOTE* If there are any .dll errors, you might have to append <-lstdc++> in between <your-file>.cpp and ezStr.a
+
+When it comes to MSVC, you need to go within the project settings of your friendly Visual Studio solution:
+
+[TODO]
