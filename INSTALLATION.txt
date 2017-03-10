@@ -1,4 +1,6 @@
-I tested this using both G++ and MSVC.
+I tested this using both G++ and MSVC:
+
+-----------------------------------------------------------------------------------------------
 
 As far as G++ goes, you would compile this through the command line in a similar manner to most other statically linked libraries:
 
@@ -10,6 +12,30 @@ g++ testLib.cpp ezStr.a
 
 *NOTE* If there are any .dll errors, you might have to append <-lstdc++> in between <your-file>.cpp and ezStr.a
 
+-----------------------------------------------------------------------------------------------
+
 When it comes to MSVC, you need to go within the project settings of your friendly Visual Studio solution:
 
-[TODO]
+First:
+
+Configuration Properties -> VC++ Properties -> Edit Include Directories
+
+	Add the "include" directory (where ever you put it) here.
+
+Second:
+
+Configuration Properties -> VC++ Properties -> Edit Library Directories
+
+	Add the "lib" directory (where ever you placed it) here.
+
+Third:
+
+Configuration Properties -> Linker -> Input -> Edit Additional Dependencies
+
+	Manually input "ezStr.lib;" in the first empty field.
+
+Finally:
+
+#include "ezStr.hpp"
+
+	Get to programming!
