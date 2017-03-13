@@ -1,7 +1,7 @@
 #Easy Ascii Strings
 
-Is a just a micro (if even that) library with a handful of functions that I find myself frequently creating whenever I make even trivial C++ functions. At the behest of a senior developer, I was informed to compile my own library of functions I find myself reiterating often. 
+A small collection of convenient functions for manipulating ascii-only strings in C++.
 
-So, without further ado, here is a small ASCII-based library that makes wrappers for usually verbose functions or tedious, but useful, operations. I will continue to add additional functionality to this library if I deem it necessary (if I forget something or I encounter a bug). Until then, I hope everyone enjoys the library, whomever may stumble upon it.
+I made this largely because I find myself remaking/reusing these functions often so, rather than constantly remake them for each individual project, I decided to compile a micro library for my uses.
 
 **Thanks for reading.**
