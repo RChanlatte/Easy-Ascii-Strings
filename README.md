@@ -1,4 +1,4 @@
-#Easy Ascii Strings
+#Easy Ascii Strings#
 
 A small collection of convenient functions for manipulating ascii-only strings in C++.
 
