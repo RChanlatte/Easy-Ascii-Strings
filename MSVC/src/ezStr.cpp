@@ -97,6 +97,32 @@ bool ezStr::Compare(const std::string& firstString, const std::string& secondStr
 	return firstString == secondString ? true : false;
 }
 
+// adds a newline as per the console buffer
+std::string ezStr::ConsoleBuffer_Newline(std::string const &inputStr, size_t const &buffer)
+{
+   std::string newStr, subStr;
+   size_t conBuffer = (buffer - 2);
+
+   for (size_t i = 0; i < inputStr.length(); i++)
+   {
+      if (i < conBuffer)
+      {
+         subStr += inputStr[i];
+      }
+      else if (i == conBuffer)
+      {
+         subStr += inputStr[i];
+         subStr += '\n';
+         newStr += subStr;
+         subStr.clear();
+         conBuffer += (buffer - 1);
+      }
+   }
+   newStr += subStr;
+
+   return newStr;
+}
+
 // takes a string and a single-character delimiter, and tokenizing it into a vector
 std::vector <std::string> ezStr::ToVector(const std::string& inputStr, const char& delim)
 {

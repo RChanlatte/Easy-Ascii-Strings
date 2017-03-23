@@ -34,6 +34,9 @@ namespace ezStr
 	// compare two strings and return a boolean depending on their parity
 	bool Compare(const std::string &firstString, const std::string &secondString);
 
+   // adds a newline as per the console buffer
+   std::string ConsoleBuffer_Newline(std::string const &inputStr, size_t const &buffer);
+
 	// convert words in string to list based on a delimiter, defaults to space
 	std::vector<std::string> ToVector(const std::string &inputStr, const char &delim = space);
 }
