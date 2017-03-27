@@ -106,6 +106,20 @@ void ezStr::Remove_Chars(std::string& inputStr, std::vector<char> removeChar_Vec
    }
 }
 
+void ezStr::Cleanse_Alpha(std::string& inputStr)
+{
+   Strip_Whitespace(inputStr);
+   Remove_Chars(inputStr, ezStr::PUNCTUATION);
+   Remove_Chars(inputStr, ezStr::NUMBERS_10);
+}
+
+void ezStr::Cleanse_Num(std::string& inputStr)
+{
+   Strip_Whitespace(inputStr);
+   Remove_Chars(inputStr, ezStr::PUNCTUATION);
+   Remove_Chars(inputStr, ezStr::ALPHABET);
+}
+
 // check to see if two strings are equivalent
 bool ezStr::Compare(const std::string& firstString, const std::string& secondString)
 {

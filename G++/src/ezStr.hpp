@@ -14,6 +14,8 @@ namespace ezStr
    const char WHITESPACE[5] = { '\t', '\n', ' ', '\r', '\v' };
    const char LOWERCASE_ALPHABET[27] = {"abcdefghijklmnopqrstuvwxyz"};
    const char UPPERCASE_ALPHABET[27] = { "ABCDEFGHIJKLMNOPQRSTUVWXYZ" };
+   const char ALPHABET[54] = { "abcdefghijklmnopqrstuvwxyz"
+                               "ABCDEFGHIJKLMNOPQRSTUVWXYZ"};
    const char ALPHANUMERIC[63] = {"abcdefghijklmnopqrstuvwxyz"
                                    "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                                    "1234567890"};
@@ -43,6 +45,10 @@ namespace ezStr
    void Remove_Chars(std::string& inputStr, std::string removeChar_Str);
    // remove a vector of characters from a string
    void Remove_Chars(std::string& inputStr, std::vector<char> removeChar_Vec);
+   // cleanses input to easily handle input, strictly letters only
+   void Cleanse_Alpha(std::string& inputStr);
+   // cleanses input to easily handle input, strictly numbers only
+   void Cleanse_Num(std::string& inputStr);
 
    // compare two strings and return a boolean depending on their parity
    bool Compare(const std::string &firstString, const std::string &secondString);
