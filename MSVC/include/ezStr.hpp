@@ -46,7 +46,7 @@ namespace ezStr
    // remove a vector of characters from a string
    void Remove_Chars(std::string& inputStr, std::vector<char> removeChar_Vec);
    // cleanses input to easily handle input, strictly letters only
-   void Cleanse_Alpha(std::string& inputStr);
+   void Cleanse_Alpha(std::string& inputStr, char letter_case = 'd');
    // cleanses input to easily handle input, strictly numbers only
    void Cleanse_Num(std::string& inputStr);
 

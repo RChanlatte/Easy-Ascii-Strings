@@ -106,13 +106,32 @@ void ezStr::Remove_Chars(std::string& inputStr, std::vector<char> removeChar_Vec
    }
 }
 
-void ezStr::Cleanse_Alpha(std::string& inputStr)
+// cleanses input to easily handle input, strictly letters only
+void ezStr::Cleanse_Alpha(std::string& inputStr, char letter_case)
 {
-   Strip_Whitespace(inputStr);
-   Remove_Chars(inputStr, ezStr::PUNCTUATION);
-   Remove_Chars(inputStr, ezStr::NUMBERS_10);
+   switch (letter_case)
+   {
+   case 'l':
+      Strip_Whitespace(inputStr);
+      Remove_Chars(inputStr, ezStr::PUNCTUATION);
+      Remove_Chars(inputStr, ezStr::NUMBERS_10);
+      To_Lower(inputStr);
+      break;
+   case 'u':
+      Strip_Whitespace(inputStr);
+      Remove_Chars(inputStr, ezStr::PUNCTUATION);
+      Remove_Chars(inputStr, ezStr::NUMBERS_10);
+      To_Upper(inputStr);
+      break;
+   default:
+      Strip_Whitespace(inputStr);
+      Remove_Chars(inputStr, ezStr::PUNCTUATION);
+      Remove_Chars(inputStr, ezStr::NUMBERS_10);
+      break;
+   }
 }
 
+// cleanses input to easily handle input, strictly numbers only
 void ezStr::Cleanse_Num(std::string& inputStr)
 {
    Strip_Whitespace(inputStr);
