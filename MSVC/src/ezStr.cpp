@@ -54,11 +54,27 @@ void ezStr::Capitalize(std::string& inputStr)
 void ezStr::Replace_All(char charToReplace, char charReplacement, std::string& inputStr)
 {
    // the usual replace function
-	std::replace(inputStr.begin(), inputStr.end(), charToReplace, charReplacement);
+   std::replace(inputStr.begin(), inputStr.end(), charToReplace, charReplacement);
+}
+
+// strip whitespace from string
+void ezStr::Strip_Whitespace(std::string &inputStr)
+{
+   for (int i = 0; i < 5; i++)
+   {
+      inputStr.erase(remove(inputStr.begin(), inputStr.end(), ezStr::WHITESPACE[i]), inputStr.end());
+   }
+}
+
+// remove a single character from a string
+void ezStr::Remove_Char(std::string& inputStr, char& removeSng_Char)
+{
+   // using the erase-remove idiom, we remove a character
+   inputStr.erase(remove(inputStr.begin(), inputStr.end(), removeSng_Char), inputStr.end());
 }
 
 // remove a character or C-array of characters from a string
-void ezStr::Remove_Char(std::string& inputStr, char* removeChar_Array)
+void ezStr::Remove_Chars(std::string& inputStr, char* removeChar_Array)
 {
    // iterates over the string's characters
    for (size_t charIndex = 0; charIndex < strlen(removeChar_Array); charIndex++)
@@ -69,7 +85,7 @@ void ezStr::Remove_Char(std::string& inputStr, char* removeChar_Array)
 }
 
 // remove a string from a string
-void ezStr::Remove_Char(std::string& inputStr, std::string removeChar_Str)
+void ezStr::Remove_Chars(std::string& inputStr, std::string removeChar_Str)
 {
    // iterates over the string's characters
    for (size_t charIndex = 0; charIndex < removeChar_Str.length(); charIndex++)
@@ -80,7 +96,7 @@ void ezStr::Remove_Char(std::string& inputStr, std::string removeChar_Str)
 }
 
 // remove a vector of characters from a string
-void ezStr::Remove_Char(std::string& inputStr, std::vector<char> removeChar_Vec)
+void ezStr::Remove_Chars(std::string& inputStr, std::vector<char> removeChar_Vec)
 {
    // iterates over the string's characters
    for (size_t charIndex = 0; charIndex < removeChar_Vec.size(); charIndex++)
@@ -112,7 +128,7 @@ std::string ezStr::ConsoleBuffer_Newline(std::string const &inputStr, size_t con
       else if (i == conBuffer)
       {
          subStr += inputStr[i];
-         subStr += '\n';
+         subStr += ezStr::NEWLINE;
          newStr += subStr;
          subStr.clear();
          conBuffer += (buffer - 1);
