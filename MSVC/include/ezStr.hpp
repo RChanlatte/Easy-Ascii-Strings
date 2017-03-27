@@ -8,28 +8,36 @@
 
 namespace ezStr
 {
-	// common delimiters
-	const char space = ' ';
-	const char newline = '\n';
+	// common delimiters or common characters people may want to remove
+	const char SPACE = ' ';
+	const char NEWLINE = '\n';
+   const char LOWERCASE_ALPHABET[27] = {"abcdefghijklmnopqrstuvwxyz"};
+   const char UPPERCASE_ALPHABET[27] = { "ABCDEFGHIJKLMNOPQRSTUVWXYZ" };
+   const char ALPHANUMERIC[63] = {"abcdefghijklmnopqrstuvwxyz"
+                                   "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                                   "1234567890"};
+   const char PUNCTUATION[33] = {"`~!@#$%^&*()-_=+[{]}\\|'\";:,<.>/?"};
+   const char NUMBERS_10[11] = {"0123456789"};
+   const char NUMBERS_16[17] = {"0123456789ABCDEF"};
 
 	// converts characters to upper-case
-	void ToUpper(std::string &inputStr);
+	void To_Upper(std::string &inputStr);
 
 	// converts characters to lower-case
-	void ToLower(std::string &inputStr);
+	void To_Lower(std::string &inputStr);
 
 	// converts the first letter of every word to upper-case
 	void Capitalize(std::string &inputStr);
 
 	// replace all of one character with one other character
-	void ReplaceAll(char charToReplace, char charReplacement, std::string &inputStr);
+	void Replace_All(char charToReplace, char charReplacement, std::string &inputStr);
 
 	// remove a character or a C-array of characters
-	void RemoveChar(std::string &inputStr, char* removeChar_Array);
+	void Remove_Char(std::string &inputStr, char* removeChar_Array);
    // remove a string of characters from a string
-   void RemoveChar(std::string& inputStr, std::string removeChar_Str);
+   void Remove_Char(std::string& inputStr, std::string removeChar_Str);
    // remove a vector of characters from a string
-   void RemoveChar(std::string& inputStr, std::vector<char> removeChar_Vec);
+   void Remove_Char(std::string& inputStr, std::vector<char> removeChar_Vec);
 
 	// compare two strings and return a boolean depending on their parity
 	bool Compare(const std::string &firstString, const std::string &secondString);
@@ -38,5 +46,5 @@ namespace ezStr
    std::string ConsoleBuffer_Newline(std::string const &inputStr, size_t const &buffer);
 
 	// convert words in string to list based on a delimiter, defaults to space
-	std::vector<std::string> ToVector(const std::string &inputStr, const char &delim = space);
+	std::vector<std::string> To_Vector(const std::string &inputStr, const char &delim = SPACE);
 }

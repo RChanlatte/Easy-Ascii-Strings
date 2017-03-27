@@ -1,7 +1,7 @@
 #include "ezStr.hpp"
 
 // changes the case of a string to upper-case
-void ezStr::ToUpper(std::string& inputStr)
+void ezStr::To_Upper(std::string& inputStr)
 {
    // iterates over each character in a string
    for (size_t charIndex = 0; charIndex < inputStr.length(); charIndex++)
@@ -15,7 +15,7 @@ void ezStr::ToUpper(std::string& inputStr)
 }
 
 // changes the case of a string to lower-case
-void ezStr::ToLower(std::string& inputStr)
+void ezStr::To_Lower(std::string& inputStr)
 {
    // iterates over each character in a string
 	for (size_t charIndex = 0; charIndex < inputStr.length(); charIndex++)
@@ -51,14 +51,14 @@ void ezStr::Capitalize(std::string& inputStr)
 }
 
 // replaces a single character in a string to some other, programmer defined, character
-void ezStr::ReplaceAll(char charToReplace, char charReplacement, std::string& inputStr)
+void ezStr::Replace_All(char charToReplace, char charReplacement, std::string& inputStr)
 {
    // the usual replace function
 	std::replace(inputStr.begin(), inputStr.end(), charToReplace, charReplacement);
 }
 
 // remove a character or C-array of characters from a string
-void ezStr::RemoveChar(std::string& inputStr, char* removeChar_Array)
+void ezStr::Remove_Char(std::string& inputStr, char* removeChar_Array)
 {
    // iterates over the string's characters
    for (size_t charIndex = 0; charIndex < strlen(removeChar_Array); charIndex++)
@@ -69,7 +69,7 @@ void ezStr::RemoveChar(std::string& inputStr, char* removeChar_Array)
 }
 
 // remove a string from a string
-void ezStr::RemoveChar(std::string& inputStr, std::string removeChar_Str)
+void ezStr::Remove_Char(std::string& inputStr, std::string removeChar_Str)
 {
    // iterates over the string's characters
    for (size_t charIndex = 0; charIndex < removeChar_Str.length(); charIndex++)
@@ -80,7 +80,7 @@ void ezStr::RemoveChar(std::string& inputStr, std::string removeChar_Str)
 }
 
 // remove a vector of characters from a string
-void ezStr::RemoveChar(std::string& inputStr, std::vector<char> removeChar_Vec)
+void ezStr::Remove_Char(std::string& inputStr, std::vector<char> removeChar_Vec)
 {
    // iterates over the string's characters
    for (size_t charIndex = 0; charIndex < removeChar_Vec.size(); charIndex++)
@@ -124,7 +124,7 @@ std::string ezStr::ConsoleBuffer_Newline(std::string const &inputStr, size_t con
 }
 
 // takes a string and a single-character delimiter, and tokenizing it into a vector
-std::vector <std::string> ezStr::ToVector(const std::string& inputStr, const char& delim)
+std::vector <std::string> ezStr::To_Vector(const std::string& inputStr, const char& delim)
 {
 	std::vector<std::string> tempVec;
 	std::string tempSubStr;
